@@ -60,9 +60,17 @@ class SendContact implements ResolverInterface
         $data = $args['input'];
         $request = $this->createRequest->execute($data);
         if ($request->getId() > 0) {
-            return __('Your contact has been sent to the shop owner.');
+            return [
+                "code" => 0,
+                "message" => __('Your contact has been sent to the shop owner.'),
+                "info" => $request->getInfo()
+            ];
         } else {
-            return __('Please check your information again.');
+            return [
+                "code" => 1,
+                "message" => __('Please check your information again.'),
+                "info" => ""
+            ];
         }
     }
 }
