@@ -65,7 +65,7 @@ class CreateRequest
 
     /**
      * @param array $args
-     * @return RequestInterface
+     * @return RequestInterface|void
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function execute(array $args):RequestInterface
@@ -77,6 +77,6 @@ class CreateRequest
             RequestInterface::class
         );
 
-        return $request = $this->requestRepository->save($requestDataObject);
+        return $this->requestRepository->save($requestDataObject);
     }
 }
