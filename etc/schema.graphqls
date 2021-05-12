@@ -33,5 +33,7 @@ input SendContactInput {
 }
 
 type SendContactOutput {
+    code: Int @doc(description: "return code")
     message: String @doc(description: "return a message result about send contact")
+    info: String @doc(description: "return a contact serialized info data result about send contact")
 }

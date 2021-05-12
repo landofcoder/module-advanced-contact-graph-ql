@@ -77,6 +77,11 @@ class CreateRequest
             RequestInterface::class
         );
 
-        return $this->requestRepository->save($requestDataObject);
+        $contactData = $this->requestRepository->save($requestDataObject);
+        if($contactData){
+            $contactData->setCode(0);
+            $contactData->setMessage("Thanks for contacting us with your comments and questions. We'll respond to you very soon.");
+        }
+        return $contactData;
     }
 }
