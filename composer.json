@@ -3,7 +3,6 @@
     "description": "N/A",
     "type": "magento2-module",
     "require": {
-        "ecomteck/module-advanced-contact": "1.0.*"
     },
     "suggest": {
         "magento/module-graph-ql": "100.3.*"
